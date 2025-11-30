@@ -1,0 +1,56 @@
+{
+  "landing": {
+    "nav": {
+      "home": "الرئيسية",
+      "why": "لماذا شيب فلو",
+      "pricing": "حاسبة الأسعار",
+      "tracking": "تتبع الشحنة",
+      "faq": "الأسئلة الشائعة",
+      "signin": "تسجيل الدخول",
+      "startFree": "ابدأ الآن مجانا"
+    },
+    "hero": { 
+      "title": "شحن أسرع، تكاليف أقل، وبوليصات جاهزة بالذكاء الاصطناعي.",
+      "subtitle": "تحكّم في كل عمليات الشحن من مكان واحد — قارن بين شركات الشحن، اختر الأنسب لك، واستخرج بوليصة الشحن في ثوانٍ بدون أي تعقيد.",
+      "primaryCta": "ابدأ الآن مجانا",
+      "secondaryCta": "احجز موعد توضيحي"
+    }
+  },
+  "auth": {
+    "loginTitle": "تسجيل الدخول",
+    "signupTitle": "إنشاء حساب",
+
+    "noAccountQuestion": "ليس لديك حساب؟",
+    "haveAccountQuestion": "لديك حساب؟",
+
+    "signin": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+
+    "signinGoogle": "تسجيل الدخول باستخدام Google",
+    "signinApple": "تسجيل الدخول باستخدام Apple",
+    "signupGoogle": "إنشاء حساب باستخدام Google",
+    "signupApple": "إنشاء حساب باستخدام Apple",
+
+    "or": "أو",
+
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "example@email.com",
+
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+
+    "forgotPassword": "نسيت كلمة المرور؟",
+
+    "phone": "رقم الجوال",
+    "phonePlaceholder": "0501234567",
+
+    "fullName": "الاسم الكامل",
+    "namePlaceholder": "محمد القطناني",
+
+    "confirmPassword": "إعادة كلمة المرور",
+    "confirmPasswordPlaceholder": "أعد كتابة كلمة المرور",
+
+    "signinButton": "تسجيل الدخول",
+    "createAccount": "إنشاء حساب"
+  }
+}

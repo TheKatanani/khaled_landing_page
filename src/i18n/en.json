@@ -1,0 +1,57 @@
+{
+  "landing": {
+    "nav": {
+      "home": "Home",
+      "why": "Why Ship Flow",
+      "pricing": "Pricing Calculator",
+      "tracking": "Track Shipment",
+      "faq": "FAQ",
+      "signin": "Sign In",
+      "startFree": "Start Free"
+    },
+    "hero": {
+      "title": "Faster shipping, lower costs, and AI-ready bills of lading.",
+      "subtitle": "Control all your shipping operations from one place — compare shipping companies, choose the best for you, and generate shipping bills in seconds without any hassle.",
+      "primaryCta": "Start Free Now",
+      "secondaryCta": "Book a Demo"
+    }
+  },
+
+  "auth": {
+    "loginTitle": "Log in",
+    "signupTitle": "Create Account",
+
+    "noAccountQuestion": "Don't have an account yet?",
+    "haveAccountQuestion": "Already have an account?",
+
+    "signin": "Log in",
+    "signup": "Sign up",
+
+    "signinGoogle": "Continue with Google",
+    "signinApple": "Continue with Apple",
+    "signupGoogle": "Create account with Google",
+    "signupApple": "Create account with Apple",
+
+    "or": "OR",
+
+    "email": "Email",
+    "emailPlaceholder": "hello@example.com",
+
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+
+    "forgotPassword": "Forgot password?",
+
+    "phone": "Phone number",
+    "phonePlaceholder": "0501234567",
+
+    "fullName": "Full name",
+    "namePlaceholder": "John Doe",
+
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Re-enter password",
+
+    "signinButton": "Sign in",
+    "createAccount": "Create Account"
+  }
+}

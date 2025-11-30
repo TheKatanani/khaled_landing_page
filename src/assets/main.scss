@@ -1,2 +1,51 @@
 @import './tailwind.scss';
 @import './base.scss';
+/* BLUR MASKS */
+.partners-slider .fade-left,
+.partners-slider .fade-right {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.partners-slider .fade-left {
+  left: 0;
+  background: linear-gradient(90deg, #0F1217 0%, rgba(15,18,23,0) 100%);
+}
+
+.partners-slider .fade-right {
+  right: 0;
+  background: linear-gradient(270deg, #0F1217 0%, rgba(15,18,23,0) 100%);
+}
+
+/* SLIDER BASE */
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-slider 18s linear infinite;
+}
+
+.slide-group {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-right: 80px;
+}
+
+.logo {
+  height: 48px;
+  opacity: 0.7;
+}
+
+/* MAIN ANIMATION */
+@keyframes scroll-slider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
