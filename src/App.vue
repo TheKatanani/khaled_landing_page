@@ -5,7 +5,7 @@ import {  RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="w-screen h-screen overflow-hidden">
+  <div class="w-screen h-screen overflow-x-hidden">
   <RouterView />
 
   </div>

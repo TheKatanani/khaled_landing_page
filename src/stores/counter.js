@@ -1,9 +1,6 @@
 /*eslint-disable*/
 import { defineStore } from 'pinia'
-import { reactive, watch } from 'vue'
-import { cities } from '../data/cities'
-import axios from 'axios'
-import { computed } from 'vue'
+import { reactive  } from 'vue' 
 
 export const useCounterStore = defineStore('counter', () => {
   const state = reactive({
@@ -30,8 +27,8 @@ export const useCounterStore = defineStore('counter', () => {
   
   return {
     state,
+    setLang,
     toggleLang,
-    initLang,
-    
+    initLang, 
   }
 })
