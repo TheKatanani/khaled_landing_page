@@ -1,7 +1,8 @@
 <script setup>
+import ImageSlider from '@/components/ui/ImageSlider.vue'
+import { slides } from '@/data/sliderData'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-
 const router = useRouter()
 
 const email = ref('')
@@ -21,10 +22,8 @@ function handleSubmit(e) {
 
 <template>
   <div class="min-h-screen bg-[#0C0F16] flex items-center justify-center px-6">
-    <div
-      class="w-full max-w-5xl bg-[#11141C] rounded-2xl overflow-hidden flex shadow-2xl"
-      style="box-shadow: 0 0 50px rgba(0, 0, 0, 0.4)"
-    >
+    <div class="w-full max-w-5xl bg-[#11141C] rounded-2xl overflow-hidden flex shadow-2xl"
+      style="box-shadow: 0 0 50px rgba(0, 0, 0, 0.4)">
       <!-- LEFT FORM -->
       <div class="w-full lg:w-1/2 p-10 lg:p-14 flex flex-col justify-center text-white">
         <!-- LOGO -->
@@ -40,26 +39,21 @@ function handleSubmit(e) {
         <!-- TEXT + SIGNUP -->
         <p class="text-center text-sm text-gray-400 mb-8">
           {{ $t('auth.noAccountQuestion') }}
-          <button
-            @click="router.push({ name: 'Signup' })"
-            class="text-blue-400 hover:underline ml-1"
-          >
+          <button @click="router.push({ name: 'Signup' })" class="text-blue-400 hover:underline ml-1">
             {{ $t('auth.signup') }}
           </button>
         </p>
 
         <!-- GOOGLE BUTTON -->
         <button
-          class="w-full h-[52px] rounded-full bg-[#1A1D26] hover:bg-[#1F222D] border border-[#2C2F36] transition flex items-center justify-center gap-3 text-base font-medium mb-3"
-        >
+          class="w-full h-[52px] rounded-full bg-[#1A1D26] hover:bg-[#1F222D] border border-[#2C2F36] transition flex items-center justify-center gap-3 text-base font-medium mb-3">
           <img src="../assets/icons/google.svg" class="w-5" />
           {{ $t('auth.signinGoogle') }}
         </button>
 
         <!-- APPLE BUTTON -->
         <button
-          class="w-full h-[52px] rounded-full bg-[#1A1D26] hover:bg-[#1F222D] border border-[#2C2F36] transition flex items-center justify-center gap-3 text-base font-medium"
-        >
+          class="w-full h-[52px] rounded-full bg-[#1A1D26] hover:bg-[#1F222D] border border-[#2C2F36] transition flex items-center justify-center gap-3 text-base font-medium">
           <img src="../assets/icons/apple.svg" class="w-5" />
           {{ $t('auth.signinApple') }}
         </button>
@@ -79,12 +73,9 @@ function handleSubmit(e) {
               {{ $t('auth.email') }} <span class="text-green-500">*</span>
             </label>
 
-            <input
-              v-model="email"
-              type="email"
+            <input v-model="email" type="email"
               class="w-full h-[52px] px-4 rounded-xl bg-transparent border border-[#2C2F36] focus:border-blue-500 focus:ring-2 focus:ring-blue-600 outline-none transition text-sm"
-              :placeholder="$t('auth.emailPlaceholder')"
-            />
+              :placeholder="$t('auth.emailPlaceholder')" />
           </div>
 
           <!-- PASSWORD -->
@@ -94,18 +85,13 @@ function handleSubmit(e) {
             </label>
 
             <div class="relative">
-              <input
-                :type="showPassword ? 'text' : 'password'"
-                v-model="password"
+              <input :type="showPassword ? 'text' : 'password'" v-model="password"
                 class="w-full h-[52px] px-4 pr-12 rounded-xl bg-transparent border border-[#2C2F36] focus:border-blue-500 focus:ring-2 focus:ring-blue-600 outline-none transition text-sm"
-                :placeholder="$t('auth.passwordPlaceholder')"
-              />
+                :placeholder="$t('auth.passwordPlaceholder')" />
 
-              <img
-                src="../assets/icons/eye.svg"
+              <img src="../assets/icons/eye.svg"
                 class="w-5 absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer opacity-70 hover:opacity-100"
-                @click="showPassword = !showPassword"
-              />
+                @click="showPassword = !showPassword" />
             </div>
 
             <button class="text-right w-full text-xs text-red-500 mt-1 hover:underline">
@@ -114,10 +100,8 @@ function handleSubmit(e) {
           </div>
 
           <!-- SUBMIT -->
-          <button
-            type="submit"
-            class="w-full h-[52px] rounded-full bg-gradient-to-r from-[#2d7dff] to-[#1b5cff] hover:opacity-90 transition flex justify-center items-center gap-2 text-base font-semibold mt-2"
-          >
+          <button type="submit"
+            class="w-full h-[52px] rounded-full bg-gradient-to-r from-[#2d7dff] to-[#1b5cff] hover:opacity-90 transition flex justify-center items-center gap-2 text-base font-semibold mt-2">
             <div v-if="loading" class="loader"></div>
             <span>{{ $t('auth.signinButton') }}</span>
           </button>
@@ -126,12 +110,9 @@ function handleSubmit(e) {
 
       <!-- RIGHT ILLUSTRATION -->
       <div class="hidden lg:block w-1/2">
-        <img
-          src="../assets/illustrations/login-illustration.png"
-          alt="illustration"
-          class="w-full h-full object-cover"
-        />
+        <ImageSlider :slides="slides" />
       </div>
+
     </div>
   </div>
 </template>
@@ -145,10 +126,12 @@ function handleSubmit(e) {
   height: 18px;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

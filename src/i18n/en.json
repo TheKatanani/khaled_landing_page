@@ -14,6 +14,77 @@
       "subtitle": "Control all your shipping operations from one place — compare shipping companies, choose the best for you, and generate shipping bills in seconds without any hassle.",
       "primaryCta": "Start Free Now",
       "secondaryCta": "Book a Demo"
+    },
+    "table": {
+      "company": "Shipping Company",
+      "service": "Service Type",
+      "duration": "Delivery Time",
+      "pickup": "Pickup Method",
+      "price": "Price",
+      "action": "Actions",
+      "orderNow": "Order Now"
+    },
+    "stats": {
+      "title": "Our Partners Trust Us",
+      "shipmentsValue": "1200+",
+      "shipmentsLabel": "Shipments managed monthly through the platform",
+      "ontimeValue": "98%",
+      "ontimeLabel": "On-time delivery rate",
+      "savingValue": "27%+",
+      "savingLabel": "Average saving in shipping costs",
+      "clientsValue": "1200+",
+      "clientsLabel": "Active customers every day"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How can I use the platform easily?",
+          "a": "Excellent service and high quality — I’m happy with the experience."
+        },
+        {
+          "q": "Is technical support available?",
+          "a": "Yes, our support team is always ready to assist you."
+        },
+        {
+          "q": "Is the platform available on all devices?",
+          "a": "Yes, it works on all modern devices and browsers."
+        },
+        {
+          "q": "How can I use the platform easily?",
+          "a": "Excellent service and high quality — I’m happy with the experience."
+        },
+        {
+          "q": "Is technical support available?",
+          "a": "Yes, our support team is always ready to assist you."
+        },
+        {
+          "q": "Is the platform available on all devices?",
+          "a": "Yes, it works on all modern devices and browsers."
+        }
+      ]
+    },
+    "footer": {
+      "footerCta": {
+        "title": "Try Ship Flow Today",
+        "subtitle": "Start managing your shipments smarter and faster than ever.",
+        "cta": "Start Free"
+      },
+
+      "followUs": "Follow us",
+      "quickLinks": "Quick links",
+      "aboutTitle": "Ship Flow",
+      "aboutText": "We organize all your shipping operations from one place — between shipping companies, stores, and customers — to make the process faster, more efficient, and easier to control.",
+
+      "links": [
+        { "key": "home", "label": "Home" },
+        { "key": "why", "label": "Why Ship Flow" },
+        { "key": "pricing", "label": "Pricing Calculator" },
+        { "key": "tracking", "label": "Track Shipment" },
+        { "key": "faq", "label": "FAQ" }
+      ],
+
+      "copyright": "ShipFlow © 2025. All rights reserved."
     }
   },
 
