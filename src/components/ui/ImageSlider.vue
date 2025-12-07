@@ -1,17 +1,21 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, computed } from "vue";
+import { useI18n } from 'vue-i18n'
 
 const props = defineProps({
   slides: {
     type: Array,
     required: true,
-    // each item: { image: importedImage, title: string, description: string }
+    // each item: { image: importedImage, title_en: string, title_ar: string, description_en: string, description_ar: string }
   },
   intervalTime: {
     type: Number,
     default: 3000
   }
 });
+
+const { locale } = useI18n()
+const isArabic = computed(() => locale.value === 'ar')
 
 const currentIndex = ref(0);
 let interval;
@@ -26,7 +30,7 @@ onBeforeUnmount(() => clearInterval(interval));
 </script>
 
 <template>
-  <div class="relative w-full h-full rounded-2xl overflow-hidden">
+  <div class="relative w-full h-full rounded-2xl overflow-hidden" :dir="isArabic ? 'rtl' : 'ltr'">
 
     <!-- BACKGROUND IMAGE -->
     <div class="absolute inset-0 bg-cover bg-center transition-all duration-700"
@@ -39,11 +43,11 @@ onBeforeUnmount(() => clearInterval(interval));
     <div class="relative z-10 h-full flex flex-col justify-end items-center pb-12 px-6 text-center">
 
       <h3 class="text-white text-xl font-semibold mb-2">
-        {{ props.slides[currentIndex].title }}
+        {{ isArabic ? props.slides[currentIndex].title_ar : props.slides[currentIndex].title_en }}
       </h3>
 
       <p class="text-white/70 text-sm max-w-md leading-relaxed">
-        {{ props.slides[currentIndex].description }}
+        {{ isArabic ? props.slides[currentIndex].description_ar : props.slides[currentIndex].description_en }}
       </p>
 
       <!-- DOTS -->
