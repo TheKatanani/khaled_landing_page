@@ -4,8 +4,13 @@ import { computed, ref } from 'vue'
 
 const { t, tm, locale } = useI18n()
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 // FIXED: returns array, not string
-const faqItems = computed(() => tm('landing.faq.items'))
+const faqItems = computed(() => tm('landing.faq.items') as FaqItem[])
 
 const dir = computed(() => (locale.value === 'ar' ? 'rtl' : 'ltr'))
 
@@ -22,21 +27,13 @@ function toggle(idx: number) {
     </h2>
 
     <div class="max-w-3xl mx-auto flex flex-col gap-4">
-      <div
-        v-for="(item, i) in faqItems"
-        :key="i"
-        class="bg-[#161b22] text-white p-5 rounded-xl cursor-pointer"
-        @click="toggle(i)"
-      >
+      <div v-for="(item, i) in faqItems" :key="i" class="bg-[#161b22] text-white p-5 rounded-xl cursor-pointer"
+        @click="toggle(i)">
         <div class="flex justify-between items-center">
           <p class="font-semibold">{{ item.q }}</p>
           <span class="text-xl flex items-center">
-            <img
-              src="../../assets/icons/x+.svg"
-              alt="toggle"
-              :class="openId === i ? '' : 'rotate-45'"
-              class="w-5 h-5 transition-transform duration-200"
-            />
+            <img src="../../assets/icons/x+.svg" alt="Toggle FAQ" :class="openId === i ? '' : 'rotate-45'"
+              class="w-5 h-5 transition-transform duration-200" />
           </span>
         </div>
 

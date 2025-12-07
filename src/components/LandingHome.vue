@@ -2,15 +2,17 @@
 import MainNavbar from '@/components/layout/MainNavbar.vue'
 import Footer from '@/components/layout/Footer.vue'
 import HeroSection from '@/components/sections/HeroSection.vue'
-import { ref } from 'vue'
-import PricingTable from './sections/PricingTable.vue'
-import StatsSection from './sections/StatsSection.vue'
-import PriceCalculatorSection from './sections/PriceCalculatorSection.vue'
-import WhySection from './sections/WhySection.vue'
-import StepsSection from './sections/StepsSection.vue' 
-import TestimonialsSection from './sections/TestimonialsSection.vue'
-import FaqSection from './sections/FaqSection.vue'
-import Network from './sections/Network.vue'
+import { ref, defineAsyncComponent } from 'vue'
+
+// Async Components for LCP optimization
+const PricingTable = defineAsyncComponent(() => import('./sections/PricingTable.vue'))
+const StatsSection = defineAsyncComponent(() => import('./sections/StatsSection.vue'))
+const PriceCalculatorSection = defineAsyncComponent(() => import('./sections/PriceCalculatorSection.vue'))
+const WhySection = defineAsyncComponent(() => import('./sections/WhySection.vue'))
+const StepsSection = defineAsyncComponent(() => import('./sections/StepsSection.vue'))
+const TestimonialsSection = defineAsyncComponent(() => import('./sections/TestimonialsSection.vue'))
+const FaqSection = defineAsyncComponent(() => import('./sections/FaqSection.vue'))
+const Network = defineAsyncComponent(() => import('./sections/Network.vue'))
 
 const showTrackModal = ref(false)
 
@@ -41,7 +43,7 @@ function openTrackModal() {
       <section id="Steps" class="py-24 max-w-6xl mx-auto px-4 lg:px-0">
         <StepsSection />
       </section>
-      <section id="Network" class="lg:py-24 lg:max-w-6xl lg:mx-auto lg:px-4"> 
+      <section id="Network" class="lg:py-24 lg:max-w-6xl lg:mx-auto lg:px-4">
         <Network />
       </section>
       <TestimonialsSection />

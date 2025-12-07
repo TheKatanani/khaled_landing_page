@@ -8,8 +8,8 @@ const props = defineProps({
 <template>
     <div class="node-container group">
         <div class="node-circle group-hover:shadow-blue">
-            <img v-if="logo" :src="logo" class="w-5 opacity-90" />
-            <img v-else src="" class="w-5 opacity-50" />
+            <img v-if="logo" :src="logo" :alt="name || 'Node Logo'" class="w-5 opacity-90" />
+            <img v-else src="" alt="null" class="w-5 opacity-50" />
         </div>
 
         <!-- Tooltip (logo name) -->

@@ -35,7 +35,7 @@ function handleSubmit(e) {
       <div class="w-full lg:w-1/2 p-10 lg:p-14 flex flex-col justify-center text-white">
         <!-- LOGO -->
         <div class="flex justify-center mb-6">
-          <img src="../assets/logos/logo.svg" alt="logo" class="w-20 opacity-95" />
+          <img src="../assets/logos/logo.svg" alt="Ship Flow Logo" class="w-20 opacity-95" />
         </div>
 
         <!-- TITLE -->

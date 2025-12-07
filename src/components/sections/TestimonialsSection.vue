@@ -1,23 +1,46 @@
 <script setup lang="ts">
+import { computed, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Card from "../ui/Card.vue"
 import { testimonials } from "../../data/testimonialsData"
+
+interface Testimonial {
+  id: number
+  name: string
+  rating: number
+  avatar: string
+  text: string
+}
+
+const { t } = useI18n()
+
+// Map testimonials data to include translated text
+const testimonialsState = reactive({
+  list: computed<Testimonial[]>(() => {
+    return testimonials.map((item) => ({
+      ...item,
+      name: t('testimonials.sampleName'),
+      text: t('testimonials.sampleText')
+    }))
+  }) as unknown as Testimonial[]
+})
 </script>
 
 <template>
   <section class="py-24 bg-[#050814]">
     <h2 class="text-center text-white text-3xl font-bold mb-14">
-      Our Clients Speak About Us
+      {{ t('testimonials.title') }}
     </h2>
 
     <!-- ROW 1 -->
     <div class="marquee">
       <div class="marquee-inner">
         <div class="marquee-track">
-          <Card v-for="t in testimonials" :key="'r1-'+t.id" :item="t" />
+          <Card v-for="testimonial in testimonialsState.list" :key="'r1-' + testimonial.id" :item="testimonial" />
         </div>
 
         <div class="marquee-track">
-          <Card v-for="t in testimonials" :key="'r1c-'+t.id" :item="t" />
+          <Card v-for="testimonial in testimonialsState.list" :key="'r1c-' + testimonial.id" :item="testimonial" />
         </div>
       </div>
     </div>
@@ -26,11 +49,11 @@ import { testimonials } from "../../data/testimonialsData"
     <div class="marquee reverse">
       <div class="marquee-inner">
         <div class="marquee-track">
-          <Card v-for="t in testimonials" :key="'r2-'+t.id" :item="t" />
+          <Card v-for="testimonial in testimonialsState.list" :key="'r2-' + testimonial.id" :item="testimonial" />
         </div>
 
         <div class="marquee-track">
-          <Card v-for="t in testimonials" :key="'r2c-'+t.id" :item="t" />
+          <Card v-for="testimonial in testimonialsState.list" :key="'r2c-' + testimonial.id" :item="testimonial" />
         </div>
       </div>
     </div>
@@ -42,13 +65,11 @@ import { testimonials } from "../../data/testimonialsData"
 .marquee {
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%);
   margin-bottom: 4rem;
 }
 
@@ -82,6 +103,7 @@ import { testimonials } from "../../data/testimonialsData"
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -91,6 +113,7 @@ import { testimonials } from "../../data/testimonialsData"
   from {
     transform: translateX(-50%);
   }
+
   to {
     transform: translateX(0);
   }

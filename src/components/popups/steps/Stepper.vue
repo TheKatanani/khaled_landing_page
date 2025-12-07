@@ -13,7 +13,7 @@ function isActive(step: number) {
 </script>
 
 <template>
-    <div class="flex items-center justify-center gap-3 select-none" dir="rtl">
+    <div class="flex items-center justify-center gap-3 select-none">
 
 
         <!-- STEP 1 -->

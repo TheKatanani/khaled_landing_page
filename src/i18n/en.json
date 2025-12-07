@@ -79,50 +79,227 @@
       "links": [
         { "key": "home", "label": "Home" },
         { "key": "why", "label": "Why Ship Flow" },
-        { "key": "pricing", "label": "Pricing Calculator" },
-        { "key": "tracking", "label": "Track Shipment" },
-        { "key": "faq", "label": "FAQ" }
-      ],
-
-      "copyright": "ShipFlow © 2025. All rights reserved."
-    }
-  },
-
-  "auth": {
-    "loginTitle": "Log in",
-    "signupTitle": "Create Account",
-
-    "noAccountQuestion": "Don't have an account yet?",
-    "haveAccountQuestion": "Already have an account?",
-
-    "signin": "Log in",
+        { "key": "pricing", "label": "Pricing Calculator" }
+      ]
+    },
     "signup": "Sign up",
-
     "signinGoogle": "Continue with Google",
     "signinApple": "Continue with Apple",
     "signupGoogle": "Create account with Google",
     "signupApple": "Create account with Apple",
-
     "or": "OR",
-
     "email": "Email",
     "emailPlaceholder": "hello@example.com",
-
     "password": "Password",
     "passwordPlaceholder": "Enter your password",
-
     "forgotPassword": "Forgot password?",
-
     "phone": "Phone number",
     "phonePlaceholder": "0501234567",
-
     "fullName": "Full name",
     "namePlaceholder": "John Doe",
-
     "confirmPassword": "Confirm password",
     "confirmPasswordPlaceholder": "Re-enter password",
-
     "signinButton": "Sign in",
+    "createAccount": "Create Account"
+  },
+  "network": {
+    "partners": "Our Partners",
+    "clients": "Our Clients"
+  },
+
+  "steps": {
+    "title": "Ready bill of lading in seconds, with AI detecting your data.",
+    "aiStep1": {
+      "desc": "Upload the order file or enter simple data (Customer Name, City, Order Number)",
+      "demo": {
+        "name": "Customer Name",
+        "phone": "Phone Number",
+        "city": "City"
+      }
+    },
+    "aiStep2": {
+      "desc": "Click Analyze",
+      "analyze": "Analyze Data",
+      "clear": "Clear"
+    },
+    "aiStep3": {
+      "desc": "The system will fill in all shipping bill details to be ready for printing or sending to the shipping company."
+    }
+  },
+  "pricing": {
+    "badge": "Pricing Plans",
+    "title": "Plans for every business size",
+    "subtitle": "Choose the plan that suits your needs, whether you are a starter or a large company.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "save": "Save 20%",
+    "sar": "SAR",
+    "month": "Month",
+    "choosePlan": "Choose Plan",
+    "currentPlan": "Current Plan",
+    "popular": "Most Popular"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What our clients say",
+    "subtitle": "We are proud of our clients' trust and always strive to provide the best.",
+    "sampleName": "Mahmoud Ali",
+    "sampleText": "Excellent service and high quality, happy to work on this platform and I look forward to more future cooperation."
+  },
+  "why": {
+    "badge": "Why Ship Flow",
+    "title": "Why Ship Flow",
+    "items": {
+      "integration": {
+        "title": "Seamless integration with commerce platforms",
+        "desc": "Such as Salla, Zid, Shopify."
+      },
+      "tracking": {
+        "title": "Real-time tracking and accurate reports",
+        "desc": "Monitor your shipment performance from any device."
+      },
+      "prices": {
+        "title": "Preferential prices",
+        "desc": "Get prices lower than the market thanks to our partnerships."
+      },
+      "ai": {
+        "title": "AI for data extraction",
+        "desc": "Don't waste time filling data, the system handles it."
+      },
+      "comparison": {
+        "title": "Instant comparison between carriers",
+        "desc": "Compare prices, time, and services in a moment."
+      }
+    }
+  },
+  "calculator": {
+    "title": "Know your shipment cost before you start",
+    "subtitle": "Compare prices between different shipping companies and choose the best for you",
+    "companyLabel": "Shipping Company",
+    "selectCompany": "Select Shipping Company",
+    "fromLabel": "Origin City",
+    "selectFrom": "Select Origin City",
+    "toLabel": "Destination City",
+    "selectTo": "Select Destination City",
+    "serviceLabel": "Service Type",
+    "economic": "Economic",
+    "weightLabel": "Weight (kg)",
+    "calculate": "Calculate Cost Now",
+    "calculating": "Calculating...",
+    "bestPrice": "Best Price",
+    "fastest": "Fastest",
+    "sar": "SAR",
+    "days": "days"
+  },
+  "booking": {
+    "title": "Book a Demo",
+    "subtitle": "Discover how Ship Flow can improve your shipping operations",
+    "step1": {
+      "title": "Choose your appointment",
+      "dateLabel": "Select Date",
+      "timeLabel": "Select Time",
+      "monthLabel": "Month",
+      "yearLabel": "Year",
+      "periodLabel": "Period",
+      "minuteLabel": "Minute",
+      "hourLabel": "Hour",
+      "selectedTime": "Selected Time",
+      "confirmAndContinue": "Confirm & Continue",
+      "am": "AM",
+      "pm": "PM",
+      "months": {
+        "jan": "January",
+        "feb": "February",
+        "mar": "March",
+        "apr": "April",
+        "may": "May",
+        "jun": "June",
+        "jul": "July",
+        "aug": "August",
+        "sep": "September",
+        "oct": "October",
+        "nov": "November",
+        "dec": "December"
+      },
+      "next": "Next"
+    },
+    "step2": {
+      "title": "Book your appointment",
+      "monthlyOrders": "Monthly Orders",
+      "country": "Country",
+      "shopType": "Store Type",
+      "companyName": "Store or Company Name",
+      "phone": "Phone Number",
+      "questions": "What are your most important questions?",
+      "email": "Email Address",
+      "website": "Website URL",
+      "about": "About your company",
+      "back": "Back",
+      "next": "Next"
+    },
+    "step3": {
+      "title": "Book your appointment",
+      "usage": "Primary Usage",
+      "workload": "Workload",
+      "preferredTime": "Preferred Time",
+      "startDate": "Desired Start Date",
+      "budget": "Monthly Budget",
+      "notes": "Additional Information",
+      "back": "Edit Details",
+      "confirm": "Confirm & Send",
+      "selectedTimeLabel": "Appointment Time"
+    },
+    "step4": {
+      "successTitle": "Appointment Booked Successfully!",
+      "successBody": "We are excited to connect with you at the scheduled time to answer all your questions. We will contact you shortly via email and phone.",
+      "ok": "Okay"
+    }
+  },
+  "tracking": {
+    "title": "Track your shipment status instantly",
+    "subtitle": "Enter your order number to check for latest updates.",
+    "placeholder": "Your Order Number Here",
+    "track": "Track Now",
+    "label": "Enter Order Number",
+    "resultTitle": "Order Details",
+    "ownerName": "Customer Name",
+    "shipmentNumber": "Shipment Number",
+    "status": "Shipment Status",
+    "location": "Current Location",
+    "date": "Last Update",
+    "ok": "Okay",
+    "searchTypes": {
+      "label": "Search Type",
+      "shipmentNumber": "Shipment Number",
+      "mobileNumber": "Mobile Number",
+      "waybillNumber": "Waybill Number",
+      "orderNumber": "Order Number"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "noAccountQuestion": "Don't have an account?",
+    "signup": "Sign up",
+    "signinGoogle": "Sign in with Google",
+    "signinApple": "Sign in with Apple",
+    "or": "OR",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "signinButton": "Sign in",
+    "signupTitle": "Create your account",
+    "haveAccountQuestion": "Already have an account?",
+    "signin": "Sign in",
+    "signupGoogle": "Sign up with Google",
+    "signupApple": "Sign up with Apple",
+    "fullName": "Full name",
+    "namePlaceholder": "John Doe",
+    "phone": "Phone number",
+    "phonePlaceholder": "05xxxxxxxx",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Re-enter password",
     "createAccount": "Create Account"
   }
 }

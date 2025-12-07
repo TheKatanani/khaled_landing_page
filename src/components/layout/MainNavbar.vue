@@ -79,7 +79,7 @@ function closeMenu() {
       <div class="flex items-center gap-3 lg:hidden" :class="{ 'flex-row-reverse': isArabic }">
         <!-- MENU ICON (Always on the left in LTR, right in RTL) -->
         <button @click="openMenu" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-          <img src="../../assets/icons/menu.svg" class="w-6 h-6 opacity-90" />
+          <img src="../../assets/icons/menu.svg" class="w-6 h-6 opacity-90" alt="Menu" />
         </button>
 
         <!-- PRIMARY CTA -->
@@ -91,29 +91,31 @@ function closeMenu() {
         <!-- LANGUAGE SWITCH -->
         <button @click="toggleLang">
           <img v-if="isArabic" src="../../assets/flags/gb.svg"
-            class="w-9 h-9 rounded-full border border-white/10 shadow" />
-          <img v-else src="../../assets/flags/sa.svg" class="w-9 h-9 rounded-full border border-white/10 shadow" />
+            class="w-9 h-9 rounded-full border border-white/10 shadow" alt="Switch to English" />
+          <img v-else src="../../assets/flags/sa.svg" class="w-9 h-9 rounded-full border border-white/10 shadow"
+            alt="Switch to Arabic" />
         </button>
       </div>
 
       <!-- MOBILE LOGO (Always on the opposite side) -->
       <div class="lg:hidden flex items-center">
-        <img src="../../assets/logos/logo.svg" class="h-[32px]" />
+        <img src="../../assets/logos/logo.svg" class="h-[32px]" alt="Ship Flow Logo" />
       </div>
 
       <!-- DESKTOP NAV -->
       <div class="hidden lg:flex items-center justify-between w-full" :class="{ 'flex-row-reverse': isArabic }">
         <!-- LOGO (Left in LTR, Right in RTL) -->
         <div class="flex items-center cursor-pointer gap-2" @click="scrollToTop">
-          <img src="../../assets/logos/logo.svg" class="h-[32px]" />
-          <img src="../../assets/logos/logo-text.svg" class="h-[32px]" />
+          <img src="../../assets/logos/logo.svg" class="h-[32px]" alt="Ship Flow Logo" />
+          <img src="../../assets/logos/logo-text.svg" class="h-[32px]" alt="Ship Flow Text" />
         </div>
 
         <!-- NAV LINKS -->
         <nav class="flex items-center bg-[#131A25]/60 border border-white/10 py-3 px-2 rounded-full shadow-lg"
           :class="{ 'flex-row-reverse': isArabic }">
           <button v-for="item in navItems" :key="item.id" @click="scrollToSection(item)"
-            class=" lg:px-2 lg:py-1 xl:py-2 xl:px-3 rounded-full text-[15px] font-medium transition whitespace-nowrap lg:mx-1 xl:mx-3" :class="activeId === item.id
+            class=" lg:px-2 lg:py-1 xl:py-2 xl:px-3 rounded-full text-[15px] font-medium transition whitespace-nowrap lg:mx-1 xl:mx-3"
+            :class="activeId === item.id
               ? 'bg-gradient-to-r from-[#2D7DFF] to-[#1B5CFF] text-white'
               : 'text-white/80 hover:text-white'
               ">
@@ -126,9 +128,9 @@ function closeMenu() {
           <!-- FLAG -->
           <button @click="toggleLang">
             <img v-if="isArabic" src="../../assets/flags/gb.svg"
-              class="w-10 h-10 rounded-full border border-white/10 shadow-lg" />
-            <img v-else src="../../assets/flags/sa.svg"
-              class="w-10 h-10 rounded-full border border-white/10 shadow-lg" />
+              class="w-10 h-10 rounded-full border border-white/10 shadow-lg" alt="Switch to English" />
+            <img v-else src="../../assets/flags/sa.svg" class="w-10 h-10 rounded-full border border-white/10 shadow-lg"
+              alt="Switch to Arabic" />
           </button>
 
           <!-- SIGN IN -->
@@ -211,9 +213,10 @@ function closeMenu() {
               <button @click="toggleLang"
                 class="flex items-center gap-3 w-full py-3 px-4 rounded-lg hover:bg-white/5 transition"
                 :class="isArabic ? 'flex-row-reverse text-right' : 'text-left'">
-                <img v-if="isArabic" src="../../assets/flags/gb.svg"
-                  class="w-8 h-8 rounded-full border border-white/20" />
-                <img v-else src="../../assets/flags/sa.svg" class="w-8 h-8 rounded-full border border-white/20" />
+                <img v-if="isArabic" src="../../assets/flags/gb.svg" class="w-8 h-8 rounded-full border border-white/20"
+                  alt="English Flag" />
+                <img v-else src="../../assets/flags/sa.svg" class="w-8 h-8 rounded-full border border-white/20"
+                  alt="Arabic Flag" />
                 <span class="text-white/80 text-sm font-medium">
                   {{ isArabic ? 'Switch to English' : 'التبديل إلى العربية' }}
                 </span>

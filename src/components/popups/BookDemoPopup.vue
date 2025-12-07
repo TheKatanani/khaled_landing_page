@@ -31,7 +31,7 @@ function back() {
 </script>
 
 <template>
-    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999]" dir="rtl">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999]">
         <div class="bg-[#0a0d1e] rounded-2xl max-w-5xl p-6 relative shadow-xl border border-white/10"
             :class="{ 'w-[95%]': step !== 4 }">
 

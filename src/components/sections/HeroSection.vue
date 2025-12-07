@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineAsyncComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import BookDemoPopup from '../popups/BookDemoPopup.vue'
+
+const BookDemoPopup = defineAsyncComponent(() => import('../popups/BookDemoPopup.vue'))
 
 const { t } = useI18n()
 const showBooking = ref(false)
@@ -9,7 +10,7 @@ const showBooking = ref(false)
 
 <template>
   <section id="home"
-    class="pt-[130px] pb-[70px] md:pt-[160px] md:pb-[100px] bg-gradient-to-b from-[#0A0F17] via-[#0B0F18] to-[#0E121A] text-white text-center">
+    class="lg:min-h-screen pt-[130px] pb-[70px] md:pt-[160px] md:pb-[100px] bg-gradient-to-b from-[#0A0F17] via-[#0B0F18] to-[#0E121A] text-white text-center">
     <div class="max-w-4xl mx-auto px-4">
       <!-- TITLE -->
       <h1
@@ -39,25 +40,25 @@ const showBooking = ref(false)
       <BookDemoPopup v-if="showBooking" @close="showBooking = false" />
 
       <!-- PARTNERS MARQUEE -->
-      <div class="relative overflow-hidden py-4 sm:py-6 partners-slider">
+      <div class="relative overflow-hidden py-4 sm:py-6 partners-slider mt-32 md:mt-0">
         <div class="fade-left"></div>
         <div class="fade-right"></div>
 
         <div class="slider-track">
           <div class="slide-group">
-            <img src="../../assets/partners/smsa.svg" class="logo" />
-            <img src="../../assets/partners/woo.svg" class="logo" />
-            <img src="../../assets/partners/zd.svg" class="logo" />
-            <img src="../../assets/partners/aramex.svg" class="logo" />
-            <img src="../../assets/partners/salla.svg" class="logo" />
+            <img src="../../assets/partners/smsa.svg" alt="SMSA Logo" class="logo" />
+            <img src="../../assets/partners/woo.svg" alt="WooCommerce Logo" class="logo" />
+            <img src="../../assets/partners/zd.svg" alt="Zid Logo" class="logo" />
+            <img src="../../assets/partners/aramex.svg" alt="Aramex Logo" class="logo" />
+            <img src="../../assets/partners/salla.svg" alt="Salla Logo" class="logo" />
           </div>
 
           <div class="slide-group">
-            <img src="../../assets/partners/smsa.svg" class="logo" />
-            <img src="../../assets/partners/woo.svg" class="logo" />
-            <img src="../../assets/partners/zd.svg" class="logo" />
-            <img src="../../assets/partners/aramex.svg" class="logo" />
-            <img src="../../assets/partners/salla.svg" class="logo" />
+            <img src="../../assets/partners/smsa.svg" alt="SMSA Logo" class="logo" />
+            <img src="../../assets/partners/woo.svg" alt="WooCommerce Logo" class="logo" />
+            <img src="../../assets/partners/zd.svg" alt="Zid Logo" class="logo" />
+            <img src="../../assets/partners/aramex.svg" alt="Aramex Logo" class="logo" />
+            <img src="../../assets/partners/salla.svg" alt="Salla Logo" class="logo" />
           </div>
         </div>
       </div>

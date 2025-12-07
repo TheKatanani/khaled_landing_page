@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import successImg from "../../assets/successImg.png";
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const emit = defineEmits(["close"]);
 
@@ -37,7 +40,7 @@ const back = () => step.value--;
 
 <template>
     <!-- Dark overlay -->
-    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[99999]" dir="rtl">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[99999]">
 
         <!-- Popup Container -->
         <div
@@ -51,153 +54,152 @@ const back = () => step.value--;
 
             <!-- Step 1 ------------------------------------------------------------->
             <template v-if="step === 1">
-                <h2 class="text-center text-xl font-bold mb-6">اختر موعدك الآن</h2>
+                <h2 class="text-center text-xl font-bold mb-6">{{ t('booking.step1.title') }}</h2>
 
                 <!-- calendar & time inputs go here -->
                 <div class="bg-[#1A1D2D] p-4 rounded-xl mb-4 border border-white/5">
-                    <p class="text-white/60 mb-2 text-sm">اختر التاريخ</p>
+                    <p class="text-white/60 mb-2 text-sm">{{ t('booking.step1.dateLabel') }}</p>
                     <input type="date" v-model="form.date"
                         class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                 </div>
 
                 <div class="bg-[#1A1D2D] p-4 rounded-xl mb-6 border border-white/5">
-                    <p class="text-white/60 mb-2 text-sm">اختر الوقت</p>
+                    <p class="text-white/60 mb-2 text-sm">{{ t('booking.step1.timeLabel') }}</p>
                     <input type="time" v-model="form.time"
                         class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                 </div>
 
                 <button @click="next"
                     class="w-full bg-[#1A74FF] py-3 rounded-xl hover:bg-[#006DFF] transition-colors font-medium text-lg">
-                    التالي
+                    {{ t('booking.step1.next') }}
                 </button>
             </template>
 
             <!-- Step 2 ------------------------------------------------------------->
             <template v-if="step === 2">
-                <h2 class="text-center text-xl font-bold mb-6">احجز موعدك الآن</h2>
+                <h2 class="text-center text-xl font-bold mb-6">{{ t('booking.step2.title') }}</h2>
 
                 <div class="grid grid-cols-2 gap-4">
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">عدد الطلبات الشهرية</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.monthlyOrders') }}</label>
                         <input v-model="form.monthlyOrders"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">البلد</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.country') }}</label>
                         <input v-model="form.country"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">اسم الشركة</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.companyName') }}</label>
                         <input v-model="form.companyName"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">رقم الهاتف</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.phone') }}</label>
                         <input v-model="form.phone"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">البريد الإلكتروني</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.email') }}</label>
                         <input v-model="form.email"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">رابط الموقع</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step2.website') }}</label>
                         <input v-model="form.website"
                             class="w-full bg-[#161B22] p-3 rounded-lg outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
                 </div>
 
-                <label class="text-xs text-white/60 mt-4 block mb-1">نبذة عن شركتك</label>
+                <label class="text-xs text-white/60 mt-4 block mb-1">{{ t('booking.step2.about') }}</label>
                 <textarea v-model="form.about"
                     class="w-full bg-[#161B22] p-3 rounded-lg outline-none h-24 text-white border border-white/10 focus:border-[#1A74FF] transition-colors resize-none"></textarea>
 
                 <div class="flex gap-4 mt-6">
                     <button @click="back"
                         class="flex-1 bg-white/10 py-3 rounded-xl hover:bg-white/20 transition-colors">
-                        رجوع
+                        {{ t('booking.step2.back') }}
                     </button>
                     <button @click="next"
                         class="flex-1 bg-[#1A74FF] py-3 rounded-xl hover:bg-[#006DFF] transition-colors font-medium">
-                        التالي
+                        {{ t('booking.step2.next') }}
                     </button>
                 </div>
             </template>
 
             <!-- Step 3 ------------------------------------------------------------->
             <template v-if="step === 3">
-                <h2 class="text-center text-xl font-bold mb-6">احجز موعدك الآن</h2>
+                <h2 class="text-center text-xl font-bold mb-6">{{ t('booking.step3.title') }}</h2>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">استخدامك الأساسي</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step3.usage') }}</label>
                         <input v-model="form.usage"
                             class="bg-[#161B22] p-3 rounded-lg w-full outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">حجم العمل</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step3.workload') }}</label>
                         <input v-model="form.workload"
                             class="bg-[#161B22] p-3 rounded-lg w-full outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">وقت مناسب لكم</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step3.preferredTime') }}</label>
                         <input v-model="form.preferredTime"
                             class="bg-[#161B22] p-3 rounded-lg w-full outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">متى ترغب بالبدء</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step3.startDate') }}</label>
                         <input v-model="form.startDate"
                             class="bg-[#161B22] p-3 rounded-lg w-full outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
 
                     <div>
-                        <label class="text-xs text-white/60 block mb-1">الميزانية الشهرية</label>
+                        <label class="text-xs text-white/60 block mb-1">{{ t('booking.step3.budget') }}</label>
                         <input v-model="form.budget"
                             class="bg-[#161B22] p-3 rounded-lg w-full outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors">
                     </div>
                 </div>
 
-                <label class="text-xs text-white/60 mt-4 block mb-1">معلومات إضافية</label>
+                <label class="text-xs text-white/60 mt-4 block mb-1">{{ t('booking.step3.notes') }}</label>
                 <textarea v-model="form.notes"
                     class="w-full bg-[#161B22] p-3 rounded-lg h-24 outline-none text-white border border-white/10 focus:border-[#1A74FF] transition-colors resize-none"></textarea>
 
                 <div class="flex gap-4 mt-6">
                     <button @click="back"
                         class="flex-1 bg-white/10 py-3 rounded-xl hover:bg-white/20 transition-colors">
-                        رجوع
+                        {{ t('booking.step3.back') }}
                     </button>
                     <button @click="next"
                         class="flex-1 bg-[#1A74FF] py-3 rounded-xl hover:bg-[#006DFF] transition-colors font-medium">
-                        تأكيد الموعد
+                        {{ t('booking.step3.confirm') }}
                     </button>
                 </div>
             </template>
 
             <!-- Step 4 ------------------------------------------------------------->
             <template v-if="step === 4">
-                <div class="text-center w-[380px] bg-[#0F1217] rounded-2xl p-6" dir="rtl">
-                    <img :src="successImg" class="h-24 mx-auto mb-4" alt="تم الحجز" />
+                <div class="text-center w-[380px] bg-[#0F1217] rounded-2xl p-6">
+                    <img :src="successImg" class="h-24 mx-auto mb-4" :alt="t('booking.step4.successTitle')" />
 
-                    <h2 class="text-white font-bold text-xl mb-2">تم حجز الموعد بنجاح!</h2>
+                    <h2 class="text-white font-bold text-xl mb-2">{{ t('booking.step4.successTitle') }}</h2>
 
                     <p class="text-white/70 text-sm leading-relaxed mb-6">
-                        متحمسون للتواصل معك في الموعد المحدد للإجابة على كل أسئلتك واستفساراتك.
-                        سنتواصل معك قريباً عبر الإيميل ورقم الهاتف الخاص بك.
+                        {{ t('booking.step4.successBody') }}
                     </p>
 
                     <button @click="$emit('close')"
                         class="w-full bg-[#1A74FF] hover:bg-[#006DFF] transition text-white py-3 rounded-xl">
-                        حسناً
+                        {{ t('booking.step4.ok') }}
                     </button>
                 </div>
             </template>

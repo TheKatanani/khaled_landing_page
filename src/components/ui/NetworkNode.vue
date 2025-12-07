@@ -20,7 +20,7 @@ const label = computed(() =>
   <div class="relative group cursor-default">
     <div class="node-base transition-all duration-300">
       <template v-if="logo">
-        <img :src="logo" class="w-6 h-6 object-contain" />
+        <img :src="logo" :alt="label || 'Node Logo'" class="w-6 h-6 object-contain" />
       </template>
 
       <template v-else>
@@ -31,10 +31,7 @@ const label = computed(() =>
     </div>
 
     <!-- Balloon Label -->
-    <div
-      v-if="label"
-      class="label-balloon z-10 opacity-0 group-hover:opacity-100 transition-all duration-300"
-    >
+    <div v-if="label" class="label-balloon z-10 opacity-0 group-hover:opacity-100 transition-all duration-300">
       {{ label }}
     </div>
   </div>
@@ -52,6 +49,7 @@ const label = computed(() =>
   justify-content: center;
   position: relative;
 }
+
 .group:hover .node-base {
   background: #1a4fbf;
   border-color: #1a74ff;
@@ -60,14 +58,23 @@ const label = computed(() =>
 
 .label-balloon {
   position: absolute;
-  top: -46px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0px;
+  left: -40%;
+  transform: translateX(-50%) rotate(-90deg);
+  /* Counter-rotate 90deg on mobile */
   background: #ff912d;
   padding: 6px 12px;
   color: white;
   font-weight: bold;
   border-radius: 14px;
   white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .label-balloon {
+    transform: translateX(0%) rotate(0deg);
+    top: -46px;
+    left: 0;
+  }
 }
 </style>
